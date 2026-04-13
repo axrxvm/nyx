@@ -37,6 +37,6 @@ bun run start
 - Do not commit `.env` or secrets.
 - The ALABS AI SDK is OpenAI-API Compliant, so you should be able to use OpenAI AI SDK without changing the code.
 
-## The Nyx Code licensed under [CC-BY-NC-4.0](./LICENSE) 
+## The Nyx Code is licensed under [CC-BY-NC-4.0](./LICENSE) 
 
 Make with love by Aarav Mehta
