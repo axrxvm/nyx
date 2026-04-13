@@ -1,0 +1,24 @@
+{
+  "name": "nyx",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "check": "tsc --noEmit",
+    "build:dist": "node build.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.44.0",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "openai": "^4.71.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.3"
+  },
+  "trustedDependencies": [
+    "protobufjs"
+  ]
+}

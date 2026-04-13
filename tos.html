@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nyx Terms of Service</title>
+    <link rel="icon" type="image/png" href="./assets/nyx-logo.png" />
+    <link rel="apple-touch-icon" href="./assets/nyx-logo.png" />
+    <meta
+      name="description"
+      content="Read Nyx Terms of Service covering acceptable use, prohibited conduct, service limitations, and enforcement."
+    />
+    <meta
+      name="keywords"
+      content="Nyx terms of service, Discord bot terms, AI bot legal terms, Nyx legal"
+    />
+    <meta name="author" content="Aarav Labs" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f8b8d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nyx" />
+    <meta property="og:title" content="Nyx Terms of Service" />
+    <meta
+      property="og:description"
+      content="Review Nyx service terms, responsibilities, restrictions, and legal limitations."
+    />
+    <meta property="og:image" content="./assets/nyx-logo.png" />
+    <meta property="og:image:alt" content="Nyx logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nyx Terms of Service" />
+    <meta
+      name="twitter:description"
+      content="Understand Nyx acceptable use, enforcement, and service limitation terms."
+    />
+    <meta name="twitter:image" content="./assets/nyx-logo.png" />
+    <meta name="twitter:image:alt" content="Nyx logo" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f9efe8;
+        --bg2: #f1d9cb;
+        --ink: #1b1418;
+        --ink-soft: #52444b;
+        --card: rgba(255, 255, 255, 0.8);
+        --stroke: rgba(27, 20, 24, 0.15);
+        --accent: #ef6461;
+        --accent2: #0f8b8d;
+        --max: 980px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 16%, rgba(239, 100, 97, 0.24), transparent 30%),
+          radial-gradient(circle at 82% 14%, rgba(15, 139, 141, 0.28), transparent 34%),
+          linear-gradient(145deg, var(--bg) 0%, var(--bg2) 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        width: min(calc(100% - 2rem), var(--max));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        padding: 1.1rem 0 0.6rem;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 0.7rem 0.9rem;
+      }
+
+      .brand {
+        text-decoration: none;
+        color: var(--ink);
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+
+      .brand img {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid var(--stroke);
+      }
+
+      .links {
+        display: inline-flex;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: var(--ink-soft);
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.68rem;
+        border-radius: 999px;
+      }
+
+      .links a:hover {
+        background: rgba(27, 20, 24, 0.08);
+        color: var(--ink);
+      }
+
+      .hero {
+        margin: 0.9rem 0;
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 24px;
+        padding: 1.5rem;
+        box-shadow: 0 14px 28px rgba(27, 20, 24, 0.12);
+      }
+
+      .eyebrow {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        color: #8f2e2d;
+      }
+
+      h1,
+      h2 {
+        font-family: "Syne", sans-serif;
+        line-height: 1.07;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        margin-top: 0.45rem;
+      }
+
+      .hero p {
+        color: #4a3e44;
+        margin: 0.7rem 0 0;
+        max-width: 60ch;
+      }
+
+      .updated {
+        display: inline-block;
+        margin-top: 0.9rem;
+        background: rgba(239, 100, 97, 0.12);
+        border: 1px solid rgba(239, 100, 97, 0.42);
+        color: #7e2b2a;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        padding: 0.35rem 0.62rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 0.85rem;
+        margin-bottom: 1.3rem;
+      }
+
+      .block {
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid var(--stroke);
+        border-left: 5px solid var(--accent);
+        border-radius: 16px;
+        padding: 1rem 1rem 1rem 1.05rem;
+      }
+
+      .block h2 {
+        font-size: 1.2rem;
+      }
+
+      .block p {
+        margin: 0.55rem 0 0;
+        color: #51454d;
+      }
+
+      .block p + p {
+        margin-top: 0.6rem;
+      }
+
+      .note {
+        border-left-color: var(--accent2);
+      }
+
+      .footer {
+        border-top: 1px solid rgba(27, 20, 24, 0.1);
+        padding: 1rem 0 1.4rem;
+        color: #55484f;
+        font-size: 0.88rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.9rem;
+      }
+
+      .footer-copy {
+        font-weight: 600;
+      }
+
+      .shade-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.86rem;
+        white-space: nowrap;
+        color: #0f6667;
+        background: rgba(15, 139, 141, 0.14);
+        border: 1px solid rgba(15, 139, 141, 0.32);
+        border-radius: 999px;
+        padding: 0.34rem 0.68rem;
+      }
+
+      @media (max-width: 680px) {
+        .container {
+          width: min(calc(100% - 1.2rem), var(--max));
+        }
+
+        .hero {
+          padding: 1.05rem;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="index.html">
+            <img src="./assets/nyx-logo.png" alt="Nyx logo" />
+            <span>Nyx</span>
+          </a>
+          <div class="links">
+            <a href="index.html">Home</a>
+            <a href="commands.html">Commands</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tos.html">Terms</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" aria-labelledby="tos-title">
+        <span class="eyebrow">Nyx Legal</span>
+        <h1 id="tos-title">Terms of Service</h1>
+        <p>
+          By using Nyx, you agree to these terms. They describe who can use the service, acceptable
+          and prohibited use, service limitations, and enforcement rules that protect reliability
+          and safety.
+        </p>
+        <span class="updated">Last updated: April 13, 2026</span>
+      </section>
+
+      <section class="grid" aria-label="Terms details">
+        <article class="block">
+          <h2>Eligibility and Acceptance</h2>
+          <p>
+            You may use Nyx only if you are authorized to use Discord and can form a binding
+            agreement under applicable law.
+          </p>
+          <p>
+            Installing Nyx in a server, using commands, or interacting in DMs or group DMs
+            constitutes acceptance of these Terms.
+          </p>
+        </article>
+
+        <article class="block">
+          <h2>Acceptable Use</h2>
+          <p>
+            You agree to use Nyx for lawful, non-abusive purposes and in compliance with Discord
+            policies, community rules, and applicable regulations.
+          </p>
+          <p>
+            Server owners and admins are responsible for how Nyx is configured and used in their
+            communities.
+          </p>
+        </article>
+
+        <article class="block">
+          <h2>Prohibited Conduct</h2>
+          <p>
+            You must not use Nyx for harassment, hate, doxxing, scams, spam, malware, unauthorized
+            access, illegal activity, or creation/distribution of policy-violating content.
+          </p>
+          <p>
+            Attempts to bypass safety systems, abuse rate limits, or degrade service reliability are
+            prohibited.
+          </p>
+        </article>
+
+        <article class="block">
+          <h2>Features and Integrations</h2>
+          <p>
+            Nyx may include AI chat, summarization, image generation, OCR, moderation, and web
+            search integrations.
+          </p>
+          <p>
+            Features can change over time and may depend on third-party provider availability,
+            pricing, latency, and technical limits.
+          </p>
+        </article>
+
+        <article class="block">
+          <h2>Accuracy and User Responsibility</h2>
+          <p>
+            AI output may be inaccurate, incomplete, biased, or outdated. You are responsible for
+            validating outputs before relying on them for decisions.
+          </p>
+          <p>
+            Nyx is not a substitute for professional legal, medical, financial, or security advice.
+          </p>
+        </article>
+
+        <article class="block note">
+          <h2>Safety, Rate Limits, and Enforcement</h2>
+          <p>
+            Requests may be moderated, delayed, rate-limited, blocked, or restricted to protect
+            users, providers, and platform reliability.
+          </p>
+          <p>
+            Violations may lead to temporary or permanent access restrictions without prior notice.
+          </p>
+        </article>
+
+        <article class="block note">
+          <h2>Service Availability and Changes</h2>
+          <p>
+            Nyx is provided on an as-is and as-available basis. Features may be changed, degraded,
+            or discontinued at any time.
+          </p>
+          <p>
+            Maintenance, outages, provider disruptions, and dependency changes may affect service
+            behavior.
+          </p>
+        </article>
+
+        <article class="block">
+          <h2>Disclaimer and Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by law, Nyx is provided without warranties of accuracy,
+            fitness, or uninterrupted availability.
+          </p>
+          <p>
+            Aarav Labs and contributors are not liable for indirect, incidental, special,
+            consequential, or punitive damages arising from use of the service.
+          </p>
+        </article>
+
+        <article class="block">
+          <h2>Updates to These Terms</h2>
+          <p>
+            These terms may be revised to reflect feature, legal, security, or operational changes.
+            Continued use after updates means you accept the revised terms.
+          </p>
+          <p>For project context and updates, see github.com/axrxvm/nyx.</p>
+        </article>
+
+        <article class="block">
+          <h2>Contact and Open Source</h2>
+          <p>
+            Nyx is open source. For issues, feedback, and contribution context, use the public
+            repository and issue tracker at github.com/axrxvm/nyx.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-copy">(c) <span id="copyright-year">2026</span> - Aarav Mehta</div>
+        <a
+          class="shade-link"
+          href="https://github.com/axrxvm/nyx"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open Source on GitHub</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const yearTarget = document.getElementById("copyright-year");
+        if (yearTarget) {
+          yearTarget.textContent = String(new Date().getFullYear());
+        }
+      })();
+    </script>
+  </body>
+</html>

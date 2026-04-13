@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nyx Commands Guide</title>
+    <link rel="icon" type="image/png" href="./assets/nyx-logo.png" />
+    <link rel="apple-touch-icon" href="./assets/nyx-logo.png" />
+    <meta
+      name="description"
+      content="Explore Nyx slash commands and message actions for Discord servers, bot DMs, and group DMs."
+    />
+    <meta
+      name="keywords"
+      content="Nyx commands, Discord slash commands, AI bot commands, message actions, Nyx docs"
+    />
+    <meta name="author" content="Aarav Labs" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f8b8d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nyx" />
+    <meta property="og:title" content="Nyx Commands Guide" />
+    <meta
+      property="og:description"
+      content="Browse Nyx command categories, examples, and message actions for fast Discord workflows."
+    />
+    <meta property="og:image" content="./assets/nyx-logo.png" />
+    <meta property="og:image:alt" content="Nyx logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nyx Commands Guide" />
+    <meta
+      name="twitter:description"
+      content="Everything you need to use Nyx commands and message actions effectively."
+    />
+    <meta name="twitter:image" content="./assets/nyx-logo.png" />
+    <meta name="twitter:image:alt" content="Nyx logo" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f0f2e7;
+        --bg2: #d8e6d4;
+        --ink: #171b19;
+        --ink-soft: #3f4944;
+        --card: rgba(255, 255, 255, 0.82);
+        --stroke: rgba(23, 27, 25, 0.13);
+        --accent: #0f8b8d;
+        --accent2: #f28f3b;
+        --max: 1080px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Manrope", sans-serif;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 10% 12%, rgba(15, 139, 141, 0.24), transparent 31%),
+          radial-gradient(circle at 86% 10%, rgba(242, 143, 59, 0.28), transparent 34%),
+          linear-gradient(135deg, var(--bg) 0%, var(--bg2) 100%);
+      }
+
+      .container {
+        width: min(calc(100% - 2rem), var(--max));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        padding: 1.1rem 0 0.7rem;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 0.7rem 0.9rem;
+      }
+
+      .brand {
+        text-decoration: none;
+        color: var(--ink);
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+
+      .brand img {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid var(--stroke);
+      }
+
+      .links {
+        display: inline-flex;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: var(--ink-soft);
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.68rem;
+        border-radius: 999px;
+      }
+
+      .links a:hover {
+        background: rgba(23, 27, 25, 0.08);
+        color: var(--ink);
+      }
+
+      .hero {
+        margin: 0.9rem 0;
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 24px;
+        padding: 1.5rem;
+        box-shadow: 0 14px 28px rgba(23, 27, 25, 0.1);
+      }
+
+      .eyebrow {
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        color: #0d6163;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Syne", sans-serif;
+        line-height: 1.07;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        margin-top: 0.45rem;
+      }
+
+      .hero p {
+        color: #36413c;
+        margin: 0.7rem 0 0;
+        max-width: 64ch;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1rem;
+      }
+
+      .btn {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        padding: 0.58rem 0.82rem;
+      }
+
+      .btn-primary {
+        background: linear-gradient(145deg, #0f8b8d 0%, #0f6f71 100%);
+        color: #f9ffff;
+      }
+
+      .btn-soft {
+        border: 1px solid var(--stroke);
+        background: #fff;
+        color: #20302a;
+      }
+
+      .section {
+        margin-bottom: 1rem;
+      }
+
+      .section h2 {
+        font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      }
+
+      .section p {
+        color: #3e4743;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid var(--stroke);
+        border-radius: 16px;
+        padding: 0.95rem;
+      }
+
+      .card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.45rem;
+      }
+
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.42rem;
+      }
+
+      .chip {
+        font-size: 0.83rem;
+        font-weight: 700;
+        border: 1px solid rgba(23, 27, 25, 0.13);
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 0.4rem 0.56rem;
+      }
+
+      .example {
+        border-left: 4px solid var(--accent2);
+      }
+
+      .example code {
+        display: block;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(23, 27, 25, 0.12);
+        border-radius: 10px;
+        padding: 0.55rem 0.62rem;
+        margin: 0.38rem 0;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 0.84rem;
+        color: #20302a;
+      }
+
+      .footer {
+        border-top: 1px solid rgba(23, 27, 25, 0.12);
+        padding: 1rem 0 1.5rem;
+        color: #3f4944;
+        font-size: 0.88rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.9rem;
+      }
+
+      .footer-copy {
+        font-weight: 600;
+      }
+
+      .shade-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.86rem;
+        white-space: nowrap;
+        color: #0f6667;
+        background: rgba(15, 139, 141, 0.14);
+        border: 1px solid rgba(15, 139, 141, 0.32);
+        border-radius: 999px;
+        padding: 0.34rem 0.68rem;
+      }
+
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 720px) {
+        .container {
+          width: min(calc(100% - 1.2rem), var(--max));
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding: 1.08rem;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="index.html">
+            <img src="./assets/nyx-logo.png" alt="Nyx logo" />
+            <span>Nyx</span>
+          </a>
+          <div class="links">
+            <a href="index.html">Home</a>
+            <a href="commands.html">Commands</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tos.html">Terms</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" aria-labelledby="commands-title">
+        <span class="eyebrow">Nyx Docs</span>
+        <h1 id="commands-title">Commands and Message Actions</h1>
+        <p>
+          Nyx supports slash commands, direct mentions, and right-click message actions across
+          servers, bot DMs, and group DMs. Use this guide as a quick operator reference.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://discord.com/oauth2/authorize?client_id=1478656527970603132"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Add Nyx to Discord</a
+          >
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="core-title">
+        <h2 id="core-title">Core Commands</h2>
+        <p>Everyday commands for fast assistance and conversation flow.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>AI Chat and Writing</h3>
+            <div class="chip-row">
+              <span class="chip">/ask</span>
+              <span class="chip">/coach</span>
+              <span class="chip">/summarize</span>
+              <span class="chip">/search</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Creative and Media</h3>
+            <div class="chip-row">
+              <span class="chip">/imagine</span>
+              <span class="chip">/ocr</span>
+              <span class="chip">/news headlines</span>
+              <span class="chip">/news digest</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Safety and Controls</h3>
+            <div class="chip-row">
+              <span class="chip">/moderate</span>
+              <span class="chip">/memory</span>
+              <span class="chip">/profile</span>
+              <span class="chip">/setchannel</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="admin-title">
+        <h2 id="admin-title">Utility Commands</h2>
+        <p>Operational commands for diagnostics and discovery.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>System and Status</h3>
+            <div class="chip-row">
+              <span class="chip">/ping</span>
+              <span class="chip">/status</span>
+              <span class="chip">/botinfo</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Command Discovery</h3>
+            <div class="chip-row">
+              <span class="chip">/commands</span>
+              <span class="chip">/help</span>
+              <span class="chip">/models</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Legal and Policy</h3>
+            <div class="chip-row">
+              <span class="chip">/privacy</span>
+              <span class="chip">/tos</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="actions-title">
+        <h2 id="actions-title">Message Actions</h2>
+        <p>Right-click any message and use Apps to run these tools instantly.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Apps Action List</h3>
+            <div class="chip-row">
+              <span class="chip">Summarize</span>
+              <span class="chip">Explain</span>
+              <span class="chip">Generate Reply</span>
+              <span class="chip">Imagine</span>
+            </div>
+          </article>
+          <article class="card example">
+            <h3>Example Mention Flow</h3>
+            <code>@Nyx summarize what happened in this thread</code>
+            <code>@Nyx explain this message in simpler terms</code>
+            <code>@Nyx imagine a poster for our event</code>
+          </article>
+          <article class="card example">
+            <h3>Companion Setup</h3>
+            <code>/profile set</code>
+            <code>/memory inspect</code>
+            <code>/memory clear</code>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-copy">(c) <span id="copyright-year">2026</span> - Aarav Mehta</div>
+        <a
+          class="shade-link"
+          href="https://github.com/axrxvm/nyx"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open Source on GitHub</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const yearTarget = document.getElementById("copyright-year");
+        if (yearTarget) {
+          yearTarget.textContent = String(new Date().getFullYear());
+        }
+      })();
+    </script>
+  </body>
+</html>
