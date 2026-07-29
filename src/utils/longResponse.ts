@@ -75,6 +75,7 @@ export function buildLongResponsePayload(
   options: LongResponseOptions = {},
 ): LongResponsePayload {
   const normalized = normalizeDiscordMessage(responseText);
+  const fullOutput = responseText.length > 0 ? responseText : "No response generated.";
   if (normalized.length <= DISCORD_MESSAGE_MAX) {
     return {
       content: normalized,
@@ -82,9 +83,9 @@ export function buildLongResponsePayload(
   }
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const extension = inferAttachmentExtension(normalized);
+  const extension = inferAttachmentExtension(fullOutput);
   const filename = `${fileBaseName}-${timestamp}.${extension}`;
-  const attachment = new AttachmentBuilder(Buffer.from(normalized, "utf8"), {
+  const attachment = new AttachmentBuilder(Buffer.from(fullOutput, "utf8"), {
     name: filename,
   });
 
