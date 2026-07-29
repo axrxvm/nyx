@@ -41,7 +41,7 @@ type ImageRequestShape = {
 };
 
 const IMAGE_REQUEST_SHAPES: ImageRequestShape[] = [
-  { modalities: ["image", "text"], image_config: { aspect_ratio: "16:9" } },
+  { modalities: ["image", "text"], image_config: { aspect_ratio: "1:1" } },
 ];
 
 function uniqueModels(models: string[]): string[] {
