@@ -29,7 +29,7 @@ type ImageMessageContentPart =
 
 const IMAGE_MODEL_FALLBACKS = [
   appConfig.imageModel,
-  "google/gemini-3.1-flash-image",
+  "google/gemini-2.5-flash-image-preview",
 ];
 const IMAGE_REQUEST_TIMEOUT_MS = 30_000;
 
@@ -41,9 +41,7 @@ type ImageRequestShape = {
 };
 
 const IMAGE_REQUEST_SHAPES: ImageRequestShape[] = [
-  { modalities: ["image", "text"], image_config: { aspect_ratio: "1:1" } },
-  { modalities: ["image"], image_config: { aspect_ratio: "1:1" } },
-  { image_config: { aspect_ratio: "1:1" } },
+  { modalities: ["image", "text"], image_config: { aspect_ratio: "16:9" } },
 ];
 
 function uniqueModels(models: string[]): string[] {
