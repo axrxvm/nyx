@@ -124,6 +124,7 @@ const MAX_MEMORY_ENTRIES = 8;
 const MAX_MEMORY_CHARS_PER_ENTRY = 280;
 const CONTEXT_CACHE_TTL_MS = 4_000;
 const REQUEST_TIMEOUT_MS = 30_000;
+const STREAM_REQUEST_TIMEOUT_MS = 180_000;
 const MAX_SUMMARY_POINTS = 12;
 const MAX_SUMMARY_CHARS = 750;
 
@@ -134,6 +135,21 @@ interface ChannelContextCacheEntry {
 }
 
 const channelContextCache = new Map<string, ChannelContextCacheEntry>();
+
+async function invokeProgressSafely(
+  onProgress: AskAIOptions["onProgress"],
+  partialText: string,
+): Promise<void> {
+  if (!onProgress) {
+    return;
+  }
+
+  try {
+    await onProgress(partialText);
+  } catch (error) {
+    console.warn("Progress update failed:", error);
+  }
+}
 
 /**
  * Builds a stable cache key for channel conversation context lookups.
@@ -566,11 +582,11 @@ async function askGeminiFallback(
       }
 
       accumulated += delta;
-      await options.onProgress(accumulated);
+      await invokeProgressSafely(options.onProgress, accumulated);
     }
 
     const finalText = normalizeDiscordMessage(accumulated.trim() || "No response generated.");
-    await options.onProgress(finalText);
+    await invokeProgressSafely(options.onProgress, finalText);
     return finalText;
   }
 
@@ -586,9 +602,7 @@ async function askGeminiFallback(
   });
 
   const text = normalizeDiscordMessage(response.text?.trim() || "No response generated.");
-  if (options.onProgress) {
-    await options.onProgress(text);
-  }
+  await invokeProgressSafely(options.onProgress, text);
 
   return text;
 }
@@ -666,7 +680,7 @@ export async function askAI(prompt: string, options: AskAIOptions = {}): Promise
 
   const response = await fetch(`${appConfig.aiBaseUrl}/chat/completions`, {
     method: "POST",
-    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+    signal: AbortSignal.timeout(shouldStream ? STREAM_REQUEST_TIMEOUT_MS : REQUEST_TIMEOUT_MS),
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${appConfig.aiApiKey}`,
@@ -737,9 +751,7 @@ export async function askAI(prompt: string, options: AskAIOptions = {}): Promise
       }
 
       accumulated += delta;
-      if (options.onProgress) {
-        await options.onProgress(accumulated);
-      }
+      await invokeProgressSafely(options.onProgress, accumulated);
     } catch {
       return;
     }
@@ -767,9 +779,7 @@ export async function askAI(prompt: string, options: AskAIOptions = {}): Promise
   }
 
   const finalText = normalizeDiscordMessage(accumulated.trim() || "No response generated.");
-  if (options.onProgress) {
-    await options.onProgress(finalText);
-  }
+  await invokeProgressSafely(options.onProgress, finalText);
 
   return finalText;
 }
